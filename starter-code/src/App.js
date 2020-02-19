@@ -4,7 +4,7 @@ import './App.css';
 // new imports
 import {Switch, Route} from 'react-router-dom';
 import HomePage from './components/HomePage';
-import Beers from './components/Beers';
+import Beers from './components/Beers2';
 import RandomBeer from './components/RandomBeer';
 import NewBeer from './components/NewBeer';
 import axios from 'axios';
@@ -22,7 +22,7 @@ class App extends Component {
         // console.log(response.data)
         this.setState({
           allBeers: response.data,
-          ready: true
+          ready: false
         })
       })
       .catch(err => console.log(err))   
