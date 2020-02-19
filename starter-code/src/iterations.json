@@ -1,0 +1,65 @@
+[
+  {
+    "Iteration": 0,
+    "Steps": [
+      "Fork the lab",
+      "git clone", 
+      "Find package.json, npm install or npm i", 
+      "npm install react-router and react-router-dom", 
+      "Index.js: import BrowserRouter ", 
+      "Index.js: wrap the <App/> component inside BrowserRouter, why do we need to do this?"
+    ],
+    "Syntax": [
+      "import { BrowserRouter } from 'react-router-dom';", 
+      "ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));"
+    ]
+  },
+  {
+    "Iteration": 1,
+    "Steps": [
+      "Goal: create four components (HomePage, Beers, RandomBeer, NewBeer) and display the HomePage only when you're home (i.e. /)",
+      "HomePage: add three <Link> components for each of the other three components and set a URL path for each Link component, don't forget to import Link", 
+      "App: import Switch, HomePage, Beers, RandomBeer, and NewBeer", 
+      "App: call the Switch component", 
+      "App: inside the Switch component make four routes for each component with the correct path for each route", 
+      "Test your routes"
+    ],
+    "Syntax": [
+      "import { Link } from 'react-router-dom';", 
+      "<Link to='URLpath'>Name of your link here</Link>", 
+      "import { Switch, Route } from 'react-router-dom';", 
+      "<Switch></Switch>", 
+      "<Route exact path='/' render={props => <HomePage/>}/>"
+    ]
+  },
+  {
+    "Iteration": 2,
+    "Steps": [
+      "Goal: create a header component that will show on every page except home",
+      "Create a component, I'll call mine Header", 
+      "Header: create a Link to home, don't forget to import Link", 
+      "Import and call the Header component on every other component except for HomePage", 
+      "Test that it works"
+    ],
+    "Syntax": [
+      "import { Link } from 'react-router-dom';", 
+      "<Link to='URLpath'>Home</Link>"
+    ]
+  },
+  {
+    "Iteration": 3,
+    "Steps": [
+      "Goal: fetch all the beers from the beers API using axios and display the beers in the Beers component ",
+      "App: make a state with a property to hold the array of beers and create another property named 'ready' and set it to false, you'll see why I do this",
+      "App: create a function that will make a get request of all the beers to the API and then save all the beers to the state", 
+      "App: pass the beers array to as a prop to the Beers component, pass ready as a prop, and pass the history props (i.e. {...props})", 
+      "Beers: display all the information", 
+      "Test that it works"
+    ],
+    "Syntax": [
+      "import axios from 'axios'", 
+      "axios.get('https://ih-beers-api2.herokuapp.com/beers').then(response => { setState{}}).catch(err => console.log(err)",
+      "if you don't remember how to dipslay information from an array then reference your previous labs"
+    ]
+  }
+]
